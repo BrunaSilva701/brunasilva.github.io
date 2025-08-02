@@ -1,0 +1,67 @@
+:root{ /*adciona o tema que será padrão*/
+    --primary-color: #F0F0F0; /*Cor principal, usada para texto e elementos de destaque*/
+    --primary-bg-color: #E9E9E9; /*Cor de fundo principal*/
+    --secondary-bg-color: #E4E5E6; /*Cor de fundo secundária, talvez para seções ou cards*/
+    --border-color: #41607F; /*Cor da borda*/
+    --title-color: #F0F0F0; /*Cor dos títulos*/
+    --text-color: #28292E; /*Cor do texto padrão*/
+    --link-color: #28292E; /*Cor dos links*/
+    --icon-color: #C7C8C9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*não autera o tamanho ou a largura do elemento, encaixa tudo na dimensõ estipulada*/
+    vertical-align: baseline;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background: var(--primary-bg-color);
+}
+
+.header{
+    display: flex;
+    flex-flow:row wrap; /*quebra a linha altomaticamente na responsividade*/
+    justify-content: center; /*centraliza os itens no cabeçalho*/
+    align-items: center; /*alinha os itens verticalmente*/
+    width: 100%;
+    padding: 1.5rem 1rem; 
+    background-color: var(--border-color);
+    gap: 1.5em; /*espaço entre os itens*/
+    margin: auto;
+}
+
+#toggleTheme{
+    font-size: 1.5rem;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 1.5em; /*espaço entre os itens*/
+    font-weight: 500;
+}
+
+.menu a{
+    text-decoration: none;
+    color:var( --text-color);
+    justify-content: space-between;
+}
+
+.menu a:hover{ /*muda a cor do texto ao passar o mouse por cima*/
+    color:var(--icon-color);
+}
+
+.menu li:first-child a{
+    color:var(--icon-color);
+}
+
+@media (min-width: 768px){
+    
+}
+
+
+
