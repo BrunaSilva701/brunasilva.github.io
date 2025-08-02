@@ -1,12 +1,21 @@
-:root{ /*adciona o tema que será padrão*/
+:root, :root[data-theme='light'] { /*adciona o tema que será padrão*/
     --primary-color: #F0F0F0; /*Cor principal, usada para texto e elementos de destaque*/
     --primary-bg-color: #E9E9E9; /*Cor de fundo principal*/
-    --secondary-bg-color: #E4E5E6; /*Cor de fundo secundária, talvez para seções ou cards*/
-    --border-color: #41607F; /*Cor da borda*/
+    --secondary-bg-color: #41607F; /*Cor de fundo secundária, talvez para seções ou cards*/
     --title-color: #F0F0F0; /*Cor dos títulos*/
     --text-color: #28292E; /*Cor do texto padrão*/
     --link-color: #28292E; /*Cor dos links*/
     --icon-color: #C7C8C9;
+}
+
+:root[data-theme='dark'] {
+    --primary-color: #F0F0F0; /*Cor principal, usada para texto e elementos de destaque*/
+    --primary-bg-color: #111217; /*Cor de fundo principal*/
+    --secondary-bg-color: #41607F; /*Cor de fundo secundária (para seções)*/
+    --title-color: #F0F0F0; /*Cor dos títulos*/
+    --text-color: #9A9A9C; /*Cor do texto padrão*/
+    --link-color: #9A9A9C; /*Cor dos links*/
+    --icon-color: #C7C8C9; /*Cor dos ícones*/
 }
 
 *{
@@ -25,24 +34,32 @@ body{
 .header{
     display: flex;
     flex-flow:row wrap; /*quebra a linha altomaticamente na responsividade*/
-    justify-content: center; /*centraliza os itens no cabeçalho*/
+    justify-content: space-between; /*centraliza os itens no cabeçalho*/
     align-items: center; /*alinha os itens verticalmente*/
     width: 100%;
-    padding: 1.5rem 1rem; 
-    background-color: var(--border-color);
-    gap: 1.5em; /*espaço entre os itens*/
+    padding: 1.5rem 3rem; 
+    background-color: var(--secondary-bg-color);
     margin: auto;
+    border-bottom: 1px solid var(--text-color);
+    position: fixed; /*O header fica fixo (fundo, borda, texto)*/
 }
 
 #toggleTheme{
     font-size: 1.5rem;
+    cursor: pointer;  /*o curso muda*/
+    transition: ease-in-out .4s;
+}
+
+#toggleTheme:hover{
+    transform: scale(1.3);
 }
 
 .menu{
     display: flex;
     align-items: center;
-    gap: 1.5em; /*espaço entre os itens*/
-    font-weight: 500;
+    gap: 1rem; /*espaço entre os itens*/
+    font-weight: 500px;
+    border-left: 10px;
 }
 
 .menu a{
@@ -57,10 +74,37 @@ body{
 
 .menu li:first-child a{
     color:var(--icon-color);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 1rem;
+}
+main{
+    display:flex;
+
+}
+h1, h2, h3{
+    text-transform: uppercase;
+}
+
+footer{
+    color:var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    visibility: visible;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+a:hover{
+    color:var(--icon-color);
+    text-decoration: none;
 }
 
 @media (min-width: 768px){
-    
+    .header{
+        padding: 1rem 6rem;
+    }
 }
 
 
