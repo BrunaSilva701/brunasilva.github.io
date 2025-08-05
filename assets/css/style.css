@@ -41,13 +41,15 @@ body{
     background-color: var(--secondary-bg-color);
     margin: auto;
     border-bottom: 1px solid var(--title-color);
-    position: fixed; /*O header fica fixo (fundo, borda, texto)*/
+    position: fixed; /*O header fica fixo (fundo, borda, texto) e é removido do fluxo normal do documento (como se estivesse flutuando sobre a página).*/
+    /* Quando utiliza position: fixed/ left:0 / right:0, o navegador é forçado a estender o elemento para que ele preencha todo o espaço entre a borda esquerda e a borda direita da tela.*/
 }
 
 #toggleTheme{
     font-size: 1.5rem;
     cursor: pointer;  /*o curso muda*/
     transition: ease-in-out .4s;
+    color: var(--text-color);
 }
 
 #toggleTheme:hover{
@@ -57,7 +59,7 @@ body{
 .menu{
     display: flex;
     align-items: center;
-    gap: 1rem; /*espaço entre os itens*/
+    gap: 1.5rem; /*espaço entre os itens*/
     font-weight: 500px;
     border-left: 10px;
 }
@@ -72,11 +74,8 @@ body{
     color:var(--icon-color);
 }
 
-.menu li:first-child a{
+.menu li:first-child a{ /*HOME*/
     color:var(--icon-color);
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2.5rem 1rem;
 }
 
 main{
@@ -107,7 +106,18 @@ span{
 #projetos{
     display: flex;
     flex-direction: column;
-    padding: 2.5rem 1rem;
+    padding: 2rem 0rem;
+}
+
+#projetos h2{
+    background-color: var(--secondary-bg-color);
+    color: var(--icon-color);
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0%;
+    font-weight: 500px; /*Grossura da fonte*/
 }
 
 .btn{
@@ -162,6 +172,7 @@ span{
 .card_button{
     display:flex; /*coloca os botões na mesa linha*/
     margin-bottom: 3rem;
+    gap: 0.4rem; /*afastar os botões*/
 }
 
 footer{
@@ -172,10 +183,10 @@ footer{
 
 footer a{
     text-decoration: none;
+    color: var(--text-color);
 }
 
 a:hover{
-    color:var(--icon-color);
     text-decoration: none;
 }
 
@@ -186,6 +197,13 @@ a:hover{
         font-size: 1.1rem;
     }
 
+    #toggleTheme{
+        font-size: 2.5rem;
+    }
+
+    .menu{
+        font-size: 1.5rem;
+    }
 
     h2{
         font-size: 3rem;
@@ -205,6 +223,7 @@ a:hover{
 
     .projetos_card{
         flex-direction: row;
+        margin-bottom: 6rem;
     }
 
     .card_body{
@@ -212,15 +231,19 @@ a:hover{
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 6rem;
     }
 
     .card_cover{
     width:50%;
     margin-left: 3rem;
     margin-right: 3rem;
-    margin-bottom: 5rem;
     }
+
+    .card_cover.card--menor{
+    width: 70%; /*Para aumentar a imagen que estava menor*/
+}
 
     .card_title{
         font-size:3.25rem;
@@ -228,16 +251,32 @@ a:hover{
 
     .card_description{
         font-size: 1.25rem;
+        margin-right: 3rem;
+    }
+
+    .card_button{
+        gap: 0.4rem;
     }
 
     .card_button .btn{
         width:auto;
     }
 
+    .card_title,
+    .card_description,
+    .card_button{
+        margin-bottom: 1rem; /*espaçamneto entre os textos*/
+    }
+
     .projetos_card.card--reverse {
         flex-direction: row-reverse; 
         justify-content: space-between;
+        margin-left: 3rem;
   }
+
+    footer a{
+        color: var(--text-color);
+}
 
 }
 
