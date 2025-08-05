@@ -1,10 +1,10 @@
 :root, :root[data-theme='light'] { /*adciona o tema que será padrão*/
     --primary-color: #F0F0F0; /*Cor principal, usada para texto e elementos de destaque*/
     --primary-bg-color: #E9E9E9; /*Cor de fundo principal*/
-    --secondary-bg-color: #41607F; /*Cor de fundo secundária, talvez para seções ou cards*/
-    --title-color: #F0F0F0; /*Cor dos títulos*/
-    --text-color: #28292E; /*Cor do texto padrão*/
-    --link-color: #28292E; /*Cor dos links*/
+    --secondary-bg-color: #41607F; /*Cor de fundo secundária, para seções ou cards*/
+    --text-color: #28292E; /*Cor dos títulos*/
+    --title-color: #28292E; /*Cor do texto padrão*/
+    --link-color: #585960; /*Cor dos links*/
     --icon-color: #C7C8C9;
 }
 
@@ -13,7 +13,7 @@
     --primary-bg-color: #111217; /*Cor de fundo principal*/
     --secondary-bg-color: #41607F; /*Cor de fundo secundária (para seções)*/
     --title-color: #F0F0F0; /*Cor dos títulos*/
-    --text-color: #9A9A9C; /*Cor do texto padrão*/
+    --text-color: #d7d7db; /*Cor do texto padrão*/
     --link-color: #9A9A9C; /*Cor dos links*/
     --icon-color: #C7C8C9; /*Cor dos ícones*/
 }
@@ -40,7 +40,7 @@ body{
     padding: 1.5rem 3rem; 
     background-color: var(--secondary-bg-color);
     margin: auto;
-    border-bottom: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--title-color);
     position: fixed; /*O header fica fixo (fundo, borda, texto)*/
 }
 
@@ -64,7 +64,7 @@ body{
 
 .menu a{
     text-decoration: none;
-    color:var( --text-color);
+    color:var(--title-color);
     justify-content: space-between;
 }
 
@@ -78,17 +78,95 @@ body{
     gap: 2rem;
     padding: 2.5rem 1rem;
 }
+
 main{
     display:flex;
-
 }
+
 h1, h2, h3{
     text-transform: uppercase;
+    color:var(--title-color);
+}
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+    letter-spacing: 0.4rem;
+}
+
+p{
+    color: var(--text-color)
+}
+
+span{
+    color: var(--text-color);
+    gap:3rem;
+}
+
+#projetos{
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1rem;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 3.125rem;
+    padding: 0.875rem 1.5rem;
+    transition: ease-in-out .3s;
+    cursor:pointer;
+    color: var(var(--link-color))
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.btn btn--primary{
+    border-radius: 0.125rem;
+}
+
+.projetos_card{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.card_cover{
+    width:100%;
+    border-radius: 0.7rem;
+    object-fit: cover; /*ajuda na responsividade*/
+    object-position: center;
+}
+
+.card_body{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card_title{
+    font-size: 1.5rem;
+}
+
+.card_description{
+    font-size:1rem;
+}
+
+.card_button{
+    display:flex; /*coloca os botões na mesa linha*/
+    margin-bottom: 3rem;
 }
 
 footer{
-    color:var(--text-color);
-    border-bottom: 1px solid var(--text-color);
+    color:var(--title-color);
+    border-bottom: 1px solid var(--title-color);
     visibility: visible;
 }
 
@@ -101,10 +179,66 @@ a:hover{
     text-decoration: none;
 }
 
+
 @media (min-width: 768px){
     .header{
-        padding: 1rem 6rem;
+        padding: 1.9rem 6rem;
+        font-size: 1.1rem;
     }
+
+
+    h2{
+        font-size: 3rem;
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    #projetos p{
+        font-size: 2rem;
+    }
+
+    span{
+        font-size: 1.5rem;
+    }
+
+    .projetos_card{
+        flex-direction: row;
+    }
+
+    .card_body{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+    }
+
+    .card_cover{
+    width:50%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 5rem;
+    }
+
+    .card_title{
+        font-size:3.25rem;
+    }
+
+    .card_description{
+        font-size: 1.25rem;
+    }
+
+    .card_button .btn{
+        width:auto;
+    }
+
+    .projetos_card.card--reverse {
+        flex-direction: row-reverse; 
+        justify-content: space-between;
+  }
+
 }
 
 
