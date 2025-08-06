@@ -7,7 +7,7 @@ Repositório desenvolvido para compartilhar os projetos desenvolvidos por mim ta
 [![Link do portifolio](https://img.shields.io/badge/Link%20do%20Portifólio%20%20-192438?style=for-the-badge)]( https://brunasilva701.github.io/brunasilva.github.io/)
 
 ## Objetivo
-Construir seu Primeiro Portfólio Front-end do Zero.
+Construir meu Primeiro Portfólio Front-end do Zero.
 
 ## Tecnologias
 ![HTML5](https://img.shields.io/badge/HTML5-1E2E4F?style=for-the-badge&logo=html5&logoColor=white)  
