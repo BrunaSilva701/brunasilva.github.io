@@ -1,10 +1,10 @@
 
-# Meu Portifólio
+# Meu Portfólio
 
 Repositório desenvolvido para compartilhar os projetos desenvolvidos por mim tanto em cursos quanto pessoais.
 
 
-[![Link do portifolio](https://img.shields.io/badge/Link%20do%20Portifólio%20%20-192438?style=for-the-badge)]( https://brunasilva701.github.io/brunasilva.github.io/)
+[![Link do portfólio](https://img.shields.io/badge/Link%20do%20Portifólio%20%20-192438?style=for-the-badge)]( https://brunasilva701.github.io/brunasilva.github.io/)
 
 ## Objetivo
 Construir meu Primeiro Portfólio Front-end do Zero.
