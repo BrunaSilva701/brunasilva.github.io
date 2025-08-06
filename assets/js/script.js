@@ -1,4 +1,4 @@
-const toggleTheme=document.getElementById("toggleTheme");
+const toggleTheme=document.getElementById("toggleTheme"); //Muda entre os tons dark e light//
 
 const rootHtml = document.documentElement
 

@@ -41,7 +41,7 @@ body{
     background-color: var(--secondary-bg-color);
     margin: auto;
     border-bottom: 1px solid var(--title-color);
-    position: fixed; /*O header fica fixo (fundo, borda, texto) e é removido do fluxo normal do documento (como se estivesse flutuando sobre a página).*/
+   position: fixed; /*O header fica fixo (fundo, borda, texto) e é removido do fluxo normal do documento (como se estivesse flutuando sobre a página).*/
     /* Quando utiliza position: fixed/ left:0 / right:0, o navegador é forçado a estender o elemento para que ele preencha todo o espaço entre a borda esquerda e a borda direita da tela.*/
 }
 
@@ -56,6 +56,10 @@ body{
     transform: scale(1.3);
 }
 
+a{
+    text-decoration: none;
+}
+
 .menu{
     display: flex;
     align-items: center;
@@ -65,7 +69,6 @@ body{
 }
 
 .menu a{
-    text-decoration: none;
     color:var(--title-color);
     justify-content: space-between;
 }
@@ -80,11 +83,26 @@ body{
 
 main{
     display:flex;
+    padding-top: 6rem;
+    flex-direction: column;
+}
+
+main h1{
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+}
+
+main p{
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-left: 1.5rem;
 }
 
 h1, h2, h3{
     text-transform: uppercase;
     color:var(--title-color);
+    font-weight: 300;
 }
 
 h2{
@@ -109,6 +127,19 @@ span{
     padding: 2rem 0rem;
 }
 
+.projetos_container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#projetos button{
+    border: solid 1px var(--link-color);
+}
+
+#projetos i{
+    color: var(--text-color);
+}
+
 #projetos h2{
     background-color: var(--secondary-bg-color);
     color: var(--icon-color);
@@ -118,6 +149,10 @@ span{
     margin-bottom: 1rem;
     margin-left: 0%;
     font-weight: 500px; /*Grossura da fonte*/
+}
+
+#projetos h3{
+    font-weight: 300;
 }
 
 .btn{
@@ -175,10 +210,108 @@ span{
     gap: 0.4rem; /*afastar os botões*/
 }
 
+#sobre{
+    color:var(--text-color);
+}
+
+#sobre h2{
+    background-color: var(--secondary-bg-color);
+    color: var(--icon-color);
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0%;
+    font-weight: 500px;
+}
+
+#sobre .about_description p{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding:2rem;
+}
+
+#sobre .about_icons1{
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-top: solid 1px var(--icon-color);
+}
+
+#sobre .about_formation{
+    margin-bottom: 1rem;
+    padding:1.5rem;
+    border-top: solid 1px var(--icon-color);
+}
+
+#sobre .about_expert{
+    margin-bottom: 1rem;
+    padding:1.5rem;
+    border-top: solid 1px var(--icon-color);
+}
+
+#sobre .about_curso{
+    margin-bottom: 1rem;
+    padding:1.5rem;
+    border-top: solid 1px var(--icon-color);
+}
+
+.about_icons span{
+    margin-bottom: 1rem;
+}
+
+#contato h2{
+    background-color: var(--secondary-bg-color);
+    color: var(--icon-color);
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0%;
+    font-weight: 500px;
+}
+
+#contato p{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#contato .menu.menu--social{
+    margin-bottom: 1rem;
+    padding:1.5rem;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.menu.menu--social{
+    align-items: center;
+}
+
+.menu--social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Adiciona um espaço entre os ícones para melhor visualização */
+}
+
+.menu.menu--social a,
+.menu.menu--social a i,
+.menu.menu--social a span {
+  color: var(--text-color);
+}
+
+#contato button{
+  border: 1px solid var(--text-color);
+}
+
 footer{
     color:var(--title-color);
-    border-bottom: 1px solid var(--title-color);
+    border-top: 1px solid var(--title-color);
     visibility: visible;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 footer a{
@@ -198,11 +331,26 @@ a:hover{
     }
 
     #toggleTheme{
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .menu{
-        font-size: 1.5rem;
+        font-size: 1rem;
+    }
+
+    main h1{
+        margin-left: 240px;
+        font-size: 100px;
+    }
+
+    main p{
+        font-size: 24px;
+        padding-left: 220px;
+    }
+
+    .btn{
+        width: 50%;
+        margin:0 auto;
     }
 
     h2{
@@ -217,6 +365,10 @@ a:hover{
         font-size: 2rem;
     }
 
+    #projetos h3{
+        font-size: 45px;
+    }
+
     span{
         font-size: 1.5rem;
     }
@@ -227,23 +379,24 @@ a:hover{
     }
 
     .card_body{
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 6rem;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 6rem;
     }
 
     .card_cover{
-    width:50%;
-    margin-left: 3rem;
-    margin-right: 3rem;
+        width:50%;
+        margin-left: 3rem;
+        margin-right: 3rem;
     }
 
     .card_cover.card--menor{
-    width: 70%; /*Para aumentar a imagen que estava menor*/
-}
+        width: 75%; /*Para aumentar a imagen que estava menor*/
+        margin-right: 2rem;
+    }
 
     .card_title{
         font-size:3.25rem;
@@ -272,11 +425,32 @@ a:hover{
         flex-direction: row-reverse; 
         justify-content: space-between;
         margin-left: 3rem;
-  }
+    }
+    
+    .about{
+       font-size: 20px;
+    }
+    
+    #sobre{
+       font-size: px;
+    }
+    
+    .contact{
+       font-size: 20px;
+    }
+    
+    #contato p{
+       font-size: 24px;
+    }
+
+    .menu--social i{
+       font-size:2rem ;
+    }
 
     footer a{
-        color: var(--text-color);
-}
+       color: var(--text-color);
+       padding:1rem;
+    }
 
 }
 
